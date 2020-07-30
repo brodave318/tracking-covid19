@@ -1,3 +1,6 @@
+## Tracking COVID-19
+Worldwide COVID-19 tracker. Built with React, Material-UI, ChartJS, and React Leaflet
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
