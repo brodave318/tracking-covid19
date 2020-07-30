@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Sarala&display=swap");
+
+* {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f5f6fa;
+  font-family: "Sarala", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  padding: 0.5rem;
+  border-image-source: linear-gradient(to right, #f5f6fa, #db0000, #f5f6fa);
+  border-image-slice: 1;
+}
+
+.app__header>h1 {
+  color: #db0000;
+  font-size: 2rem;
+  font-family: "Racing Sans One", cursive;
+  letter-spacing: 1.8px;
+}
+
+.app__headerImage {
+  background-image: url("img/little-virus.png");
+  background-size: cover;
+  background-position: center center;
+  height: 50px;
+  width: 50px;
+  animation: rotate 140s linear infinite;
+}
+
+.app__dropdown {
+  border: 1px solid #db0000 !important;
+  border-radius: 4px;
+}
+
+.app__dropdown .MuiFormControl-root {
+  background-color: #fff;
+  border: 1px solid #db0000 !important;
+}
+
+.MuiSelect-select.MuiSelect-select {
+  padding: 18px 30px 18px !important;
+}
+
+.MuiSelect-select:focus {
+  background-color: transparent;
+}
+
+.app__left {
+  flex: 0.9;
+}
+
+.app__stats {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+
+.app__right {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app__right h3 {
+  font-family: "Racing Sans One", cursive;
+  letter-spacing: 1.8px;
+  text-transform: capitalize;
 }
 
-@keyframes App-logo-spin {
-  from {
+.app__right .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.app__right .MuiCardContent-root h3 {
+  font-weight: normal;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(197, 197, 197);
+}
+
+.app__graphTitle {
+  margin-top: 2 0px;
+}
+
+.app__graph {
+  flex-grow: 1;
+}
+
+/* **********MEDIA QUERIES********** */
+
+@media (max-width: 992px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .app__stats {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 993px) {
+  .app__right {
+    width: 30%;
+  }
+}
+
+/* **********ANIMATIONS********** */
+
+@keyframes rotate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+
+  100% {
     transform: rotate(360deg);
   }
 }
